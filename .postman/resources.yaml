@@ -1,0 +1,22 @@
+workspace:
+  id: ""
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ../postman/collections/hibuz_billing: 47318463-25ce7776-6cef-4edf-bb8c-1e5c89171569
+    ../postman/collections/billing pro: 47318463-2417db36-e287-4aa8-95d0-bef80eb82ff8
+    ../postman/collections/supermarket billing: 47318463-43c7718d-9bfa-45eb-a558-7d9361f415d2
+    ../postman/collections/retail billing: 47318463-7c378940-df06-4d4a-b383-a6b7eec5cd3f
+    ../postman/collections/New Collection: 47318463-d08b6bcc-b2fa-4fcb-81af-33a188814c63
+    ../postman/collections/school: 47318463-cdd7368a-9115-489b-89e2-290d4025557b
+    ../postman/collections/New Collection-1: 47318463-d9ee2058-b97b-445a-801c-97be86c26685
+    ../postman/collections/php project: 47318463-ddcf17bb-041c-400b-9ae0-26406aee4aee
+    ../postman/collections/New Collection-2: 47318463-98f0c8d7-26d5-446c-8e92-fb0add7fad58
+    ../postman/collections/rembg: 47318463-90e3daf3-9c29-4a69-b276-8cb8e4983172
+    ../postman/collections/jewellery: 47318463-3084023b-7839-4fad-b7fe-d98748634962
+    ../postman/collections/land app: 47318463-ba2bd100-7745-4156-86fa-81df7b6fae56
+    ../postman/collections/clothing app: 47318463-5fb6005a-d9e6-4612-ab5d-e075b672addf
+  globals:
+    ../postman/globals/workspace.globals.yaml: 3edbf792-50af-4c3d-826d-572b3ec937fa

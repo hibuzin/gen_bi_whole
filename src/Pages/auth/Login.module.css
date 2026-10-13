@@ -1,0 +1,420 @@
+
+.container {
+  width: 100%;
+  height: 100vh;
+
+  background: #ffffff;
+
+  display: flex;
+  overflow: hidden;
+}
+
+
+/* =========================
+   LEFT IMAGE SECTION
+========================= */
+
+.imageSection {
+  width: 40%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.loginImage {
+  width: 70%;
+  height: 70%;
+
+  object-fit: contain;
+}
+
+
+/* =========================
+   RIGHT LOGIN SECTION
+========================= */
+
+.formSection {
+  width: 80%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.formBox {
+  width: 100%;
+  max-width: 380px;
+
+  background: #fff;
+
+  padding: 32px;
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.brand {
+  text-align: center;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  color: var(--button-bg);
+
+  margin-bottom: 10px;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.formBox h1 {
+  text-align: left;
+
+  color: #0f172a;
+
+  font-size: 20px;
+
+  margin: 0;
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.label {
+  font-size: 12px;
+
+  font-weight: 530;
+
+  color: #4f5765;
+
+  margin-top: 6px;
+
+  margin-bottom: -10px;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.formBox input {
+  box-sizing: border-box;
+
+  width: 100%;
+
+  padding: 12px 14px;
+
+  height: 34px;
+
+  border-radius: 2px;
+
+  border: 1px solid #e2e8f0;
+
+  background: #f8fafc;
+
+  outline: none;
+
+  transition: 0.2s ease;
+
+  font-size: 14px;
+}
+
+.formBox input:focus {
+  border-color: var(--focus-color);
+
+  background: #ffffff;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.formBox button {
+  width: 100%;
+
+  padding: 12px;
+
+  height: 34px;
+
+  border: none;
+
+  border-radius: 2px;
+
+  background: var(--button-bg);
+
+  color: white;
+
+  font-weight: 600;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.formBox button:hover {
+  opacity: var(--hover);
+
+  transform: translateY(-1px);
+}
+
+.formBox button:disabled {
+  opacity: 0.7;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================
+   FORGOT PASSWORD
+========================= */
+
+.signupText {
+  margin-top: 10px;
+
+  font-size: 13px;
+
+  text-align: center;
+
+  color: #555;
+}
+
+.signupText span {
+  color: #aeaccc;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+.signupText span:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   SECURITY ROW
+========================= */
+
+.securityWrapper {
+  width: 100%;
+
+  padding: 10px 0;
+
+  margin-top: auto;
+
+  display: flex;
+
+  justify-content: center;
+
+  border-radius: 0 0 10px 10px;
+
+  background: #f3f4f6;
+
+  border-top: 1px solid #e6eaf0;
+}
+
+.securityBox {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 40px;
+}
+
+.secureItem {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  color: #6b7280;
+}
+
+.secureIcon {
+  color: #1d72d8;
+
+  font-size: 18px;
+}
+
+.isoCircle {
+  width: 20px;
+
+  height: 20px;
+
+  border: 2px solid #1d72d8;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  color: #1d72d8;
+
+  font-family: serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* LEFT 55% */
+
+.imageSection {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.loginImage {
+  width: 70%;
+  height: 70%;
+
+  object-fit: contain;
+}
+
+
+/* RIGHT 45% */
+
+.rightSection {
+  width: 45%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+}
+
+.brand {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+.brand img {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* TOP RIGHT IMAGE */
+
+.topRightImage {
+  width: 50%;
+
+  display: flex;
+  justify-content: start;
+
+  box-sizing: border-box;
+}
+
+.topRightImage img {
+  width: 60%;
+
+  object-fit: contain;
+}
+
+
+/* LOGIN AREA */
+
+.formSection {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .container {
+    justify-content: center;
+  }
+
+  .imageSection {
+    display: none;
+  }
+
+  .formSection {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .formBox {
+    max-width: 550px;
+  }
+}

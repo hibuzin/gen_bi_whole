@@ -1,0 +1,39 @@
+:root {
+
+  --sidebar-bg: #056574 ; 
+
+  /* button */
+  --button-bg: #056574 ;
+  --button-text: #ffffff;
+  --hover: 0.9;
+  
+  --table-hover:#99e0e0;
+  --table-action:#ee9eca00;
+
+  --card-hover:#99e0e040;
+  --sidebar-hover:#b9e4eb25;
+
+  /* focus (input / active highlight) */
+  --focus-color: #056574 ;
+
+  /* text */
+  --text-primary: #111;
+  --text-secondary: #6b7280;
+  --field-height: 38px;
+
+  /* dropdown accent */
+  --dropdown-hover: #0d5835;
+
+  /* sidebar sizes */
+  --sidebar-font: 12px;
+  --sidebar-icon: 14px;
+
+  /* appbar control */
+  --admin-role: 15px;
+
+  /* headings */
+  --heading-text: 20px;
+  --heading-color: rgb(31, 30, 30);
+  --heading-fontweight:500;
+ 
+}

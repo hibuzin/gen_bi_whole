@@ -1,0 +1,270 @@
+.container {
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+
+  height: calc(100vh - 40px);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.backBtn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.backBtn:hover {
+  background: none;
+}
+
+.backBtn svg {
+  font-size: 15px;
+  color: #374151;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--heading-text);
+  font-weight: var(--heading-fontweight);
+  color: var(--heading-color);
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #777;
+}
+
+/* MAIN CARD */
+.card {
+  flex: 1;
+  min-height: 0;
+
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1px;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card::-webkit-scrollbar {
+  width: 7px;
+}
+
+.card::-webkit-scrollbar-thumb {
+  background: #c9c9c9;
+  border-radius: 10px;
+}
+
+.card::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* FORM */
+.formGrid {
+  padding: 18px 18px 0;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.purchaseBillField {
+  max-width: 380px;
+}
+
+.purchaseSelect {
+  width: 100%;
+  height: 36px;
+  font-size: 13px;
+}
+
+.field input,
+.field select {
+  height: 38px;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: #4c3cce;
+  box-shadow: 0 0 0 2px rgba(76, 60, 206, 0.12);
+}
+
+/* ITEMS */
+.itemsWrap {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  padding: 0 18px 18px;
+}
+
+.itemCard {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 6px;
+  padding: 14px;
+}
+
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.itemHeader h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.itemGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.7fr 1.4fr;
+  gap: 14px;
+}
+
+/* BUTTONS */
+.removeBtn {
+  border: none;
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 7px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.removeBtn:hover {
+  background: #fecaca;
+}
+
+.footerActions {
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+
+  padding: 16px 18px;
+  margin-top: 0;
+
+  border-top: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.addBtn {
+  border: 1px solid #4c3cce;
+  background: #fff;
+  color: #4c3cce;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.addBtn:hover {
+  background: #f1f0fc;
+}
+
+.submitBtn {
+  border: none;
+  background: #4c3cce;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.submitBtn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.submitBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .container {
+    padding: 14px;
+  }
+
+  .topSection {
+    align-items: flex-start;
+  }
+
+  .itemGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .footerActions {
+    flex-direction: column;
+  }
+
+  .addBtn,
+  .submitBtn {
+    width: 100%;
+  }
+}

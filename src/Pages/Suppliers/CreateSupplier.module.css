@@ -1,0 +1,191 @@
+.container {
+  height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 10px 0;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.backBtn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.backBtn:hover {
+  background: none;
+  border-color: none;
+  color: #1b1b1c;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.header h2 {
+  font-size: var(--heading-text);
+  font-weight: var(--heading-font-weight);
+  color: var(--heading-color);
+}
+
+.form {
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 20px 20px;
+}
+
+.form::-webkit-scrollbar {
+  width: 5px;
+}
+
+.form::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border-radius: 20px;
+}
+
+.form::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sectionTitle {
+  width: 100%;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-radius: 1px; 
+  margin-bottom: 20px;
+  border: 1px solid #e5e7eb;
+  box-sizing: border-box;
+
+  margin-left: -20px;
+  margin-right: -20px;
+  width: calc(100% + 40px);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #555555;
+  margin-bottom: 8px;
+}
+
+.field input,
+.field select {
+  height: var(--field-height);
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  padding: 0 14px;
+  background: #ffffff;
+  font-size: 12px;
+  color: #111111;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.sectionTitle {
+  grid-column: 1 / -1;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #111111;
+  background: #ffffff;
+}
+
+.full{
+  grid-column: 1/-1;
+}
+
+.field textarea {
+  width: 30%;
+  min-height: 90px;
+  padding: 10px 12px;
+  border: 1px solid #dcdfe4;
+  border-radius: 8px;
+  font-size: 14px;
+  resize: vertical;
+  outline: none;
+  font-family: inherit;
+}
+
+
+
+.buttonField {
+  display: flex;
+  align-items: flex-end;
+}
+
+.btn {
+  width: 100%;
+  padding: 9px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  opacity: var(--hover);
+}
+
+.gstWrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.gstWrapper input {
+  flex: 1;
+}
+
+.gstBtn {
+  height: 32px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 6px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.gstBtn:hover {
+  opacity: var(--hover);
+}

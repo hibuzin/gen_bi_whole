@@ -1,0 +1,225 @@
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 8px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f7f7f8;
+  flex-shrink: 0;
+  gap: 20px;
+}
+
+.topBarLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.topBarRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.recentBills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex: 1;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.recentBills::-webkit-scrollbar {
+  display: none;
+}
+
+
+.billCount {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--button-bg);
+  background: #f1efff;
+  border: 1px solid #ded9ff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+
+.exitBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  font-size: 11px;
+  font-weight: 500;
+  color: #27292b;
+  cursor: pointer;
+  padding: 7px 10px;
+  border-radius: 2px;
+}
+
+.exitBtn:hover {
+  background: #f3f4f6;
+}
+
+.exitBtn kbd {
+  font-family: inherit;
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.tabsRow {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.tabActive,
+.tabHold {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 16px;
+  cursor: pointer;
+  border-right: 1px solid #e5e7eb;
+  font-size: 13px;
+}
+
+.tabActive {
+  background: #fffded;
+  color: #111827;
+  font-weight: 600;
+}
+
+.tabHold {
+  background: #f8fafc;
+  color: #345861;
+  font-weight: 500;
+}
+
+.tabHold:hover {
+  background: #f1f5f9;
+}
+
+.closeTabBtn {
+  margin-left: 8px;
+  border: none;
+  background: transparent;
+  color: #777;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.closeTabBtn:hover {
+  color: #e53935;
+}
+
+.tabAdd {
+  padding: 20px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--button-bg);
+  cursor: pointer;
+}
+
+.tabAdd:hover {
+  background: #eff6ff;
+}
+
+
+.recentBills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.recentLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #777;
+  white-space: nowrap;
+}
+
+.recentBillBtn {
+  flex-shrink: 0;
+  border: 1px solid #b7d2d9;
+  background: #f0f9f8;
+  color: #056574 ;
+  border-radius: 5px;
+  padding: 5px 9px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: 550;
+  transition: 0.15s ease;
+}
+
+.recentBillBtn:hover {
+  background: #fffbdc;
+  border-color: #d8d09a;
+  color: #111827;
+  transform: translateY(-1px);
+}
+
+.priceTypeSelector {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 12px;
+}
+
+.priceTypeBtn,
+.priceTypeActive {
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.priceTypeBtn {
+  background: #fff;
+  color: #333;
+}
+
+.priceTypeActive {
+  background: var(--button-bg);
+  color: #fff;
+  border-color: #222;
+}
+
+.tabAdd {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 20px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--button-bg);
+  cursor: pointer;
+}
+
+.pauseIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.tabAdd:hover {
+  background: #eff6ff;
+}

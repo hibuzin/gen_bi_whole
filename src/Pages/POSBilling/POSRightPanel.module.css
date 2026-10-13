@@ -1,0 +1,275 @@
+/* ── Right Panel ── */
+
+.walkInCheck input[type="checkbox"] {
+  accent-color: var(--sidebar-bg);
+}
+
+.rightPanel {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  overflow-y: auto;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.customerBox {
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.recvLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.customerFieldsRow {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.customerInput {
+  flex: 1;
+  padding: 7px 10px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  font-size: 13px;
+  outline: none;
+}
+
+.customerInput:focus {
+  border-color: #6c63ff;
+}
+
+.clearCustomerBtn {
+  background: none;
+  border: none;
+  color: #999999;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.customerDropdown {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  max-height: 180px;
+  overflow-y: auto;
+  z-index: 50;
+}
+
+.customerItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.customerItem:hover {
+  background-color: #f5f4ff;
+}
+
+.customerName {
+  color: #333333;
+}
+
+.customerPhone {
+  color: #999999;
+}
+
+.selectedCustomerTag {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--button-bg);
+  background-color: #f0eeff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.newCustomerTag {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #056574;
+  background-color: #dcf7fb;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.billBox {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.billBoxTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.billRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.billRow span {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.billVal {
+  color: #111827 !important;
+  font-weight: 500;
+}
+
+.totalBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #dcf7fb;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-top: 8px;
+}
+
+.totalBox span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #056574;
+}
+
+.bottomActions {
+  display: flex;
+  gap: 8px;
+}
+
+.savePrintBtn {
+  flex: 1;
+  font-size: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px 6px;
+  cursor: pointer;
+  background: #ffffff;
+  color: #374151;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.savePrintBtn:hover {
+  background: #f9fafb;
+}
+
+.savePrintBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.savePrintBtn kbd {
+  font-size: 10px;
+  color: #9ca3af;
+  display: block;
+  font-family: inherit;
+}
+
+.saveBtn {
+  flex: 1;
+  font-size: 12px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 6px;
+  cursor: pointer;
+  background: var(--button-bg);
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.saveBtn:hover {
+  background: opacity(0.7);
+}
+
+.saveBtn:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+}
+
+.saveBtn kbd {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  font-family: inherit;
+}
+
+.customerSummary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.customerSummaryItem {
+  min-width: 0;
+  padding: 9px 10px;
+  background: #f8f9fb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.customerSummaryItem span {
+  color: #7b8494;
+  font-size: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.customerSummaryItem strong {
+  color: #24292f;
+  font-size: 12px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.customerSummaryItem:last-child strong {
+  color: #d32f2f;
+}
+
+.billDiscountInput {
+  width: 50px;
+  height: 25px;
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: right;
+  outline: none;
+  font-size: 13px;
+}
+
+.billDiscountInput:focus {
+  border-color: #6eb6e6;
+}

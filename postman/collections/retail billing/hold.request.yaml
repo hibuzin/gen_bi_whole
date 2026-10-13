@@ -1,0 +1,14 @@
+$kind: http-request
+url: http://localhost:5000/api/retail/bill/hold
+method: GET
+body:
+  type: json
+  content: "{\r
+
+    \  \"billId\": \"PASTE_BILL_ID\",\r
+
+    \  \"note\": \"customer will come back\"\r
+
+    }"
+settings: {}
+order: 7000

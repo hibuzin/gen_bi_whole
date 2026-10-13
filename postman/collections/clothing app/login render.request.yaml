@@ -1,0 +1,14 @@
+$kind: http-request
+url: https://clothing-backend-7.onrender.com/api/auth/login
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"email\": \"ahi@yopmail.com\",\r
+
+    \    \"password\": \"pass1234\"\r
+
+    }"
+settings: {}
+order: 3000

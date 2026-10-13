@@ -1,0 +1,181 @@
+.appbar {
+  height: 30px;
+  background: #056574 ;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 24px;
+
+  box-shadow: 0 1px 3px
+    rgba(0, 0, 0, 0.05);
+
+  z-index: 1000;
+
+  position: fixed;
+}
+
+.left{
+  position:absolute;
+
+  left:16px;
+
+  display:flex;
+  align-items:center;
+}
+
+.logoText{
+  font-size:9px;
+  font-weight:500;
+
+  letter-spacing:2px;
+
+  color:#fcfcfc;
+
+  margin:0;
+
+}
+
+.center{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:100%;
+}
+
+.shopName {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fffdfd;
+
+  margin: 0;
+
+  letter-spacing: 0.5px;
+}
+
+.right {
+  position: absolute;
+  right: 14px;
+
+  display: flex;
+  align-items: center;
+}
+
+.langBox {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 5px 9px;
+
+  border-radius: 8px;
+  border: 0.5px solid #e2e8f0;
+
+  background: transparent;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: border-color 0.15s;
+}
+
+.langBox:hover,
+.langOpen {
+  border-color: #ffffff;
+}
+
+.flag {
+  width: 13px;
+  height: 13px;
+
+  object-fit: cover;
+  border-radius: 2px;
+
+  flex-shrink: 0;
+}
+
+.langLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.langChevron {
+  font-size: 16px;
+  color: #94a3b8;
+
+  line-height: 1;
+
+  transform: rotate(90deg);
+
+  transition: transform 0.15s;
+
+  display: inline-block;
+}
+
+.rotated {
+  transform: rotate(270deg);
+}
+
+.langDropdown {
+  position: absolute;
+
+  top: calc(100% + 6px);
+  right: 0;
+
+  min-width: 140px;
+
+  background: #ffffff;
+
+  border: 0.5px solid #e2e8f0;
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  z-index: 10000;
+
+  box-shadow: 0 4px 12px
+    rgba(0, 0, 0, 0.06);
+}
+
+.langOption {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 8px 12px;
+
+  cursor: pointer;
+
+  transition: background 0.1s;
+}
+
+.langOption:hover {
+  background: #f8fafc;
+}
+
+.langSelected {
+  background: #f1f5f9;
+}
+
+.langOptionName {
+  font-size: 13px;
+  color: #0f172a;
+
+  flex: 1;
+}
+
+.langCheck {
+  font-size: 11px;
+  color: #64748b;
+}

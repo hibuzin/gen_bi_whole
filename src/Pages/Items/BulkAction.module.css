@@ -1,0 +1,534 @@
+.container {
+  padding: 12px;
+  background: #ffffff;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.excelUploadBtn {
+  height: 36px;
+  padding: 0 14px;
+
+  border: 1px solid #16a34a;
+  border-radius: 6px;
+
+  background: #ffffff;
+  color: #16a34a;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.excelUploadBtn:hover {
+  background: #f0fdf4;
+}
+
+.excelFileName {
+  max-width: 220px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: var(--heading-text);
+  font-weight: var(--heading-weight);
+  color: var(--heading-color);
+}
+
+/* =========================================
+   EXCEL GRID
+========================================= */
+
+.excelGrid {
+  height: 75vh;
+  width: 100%;
+  overflow: auto;
+
+  font-size: 13px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+}
+
+.excelGridInner {
+  width: max-content;
+  min-width: 100%;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.excelHeader {
+  display: grid;
+
+  /*
+    #
+    Name
+    Brand
+    Description
+    Category
+    HSN
+    GST
+    MRP
+    Unit
+    Unit Value
+    Cost
+    Selling
+    Opening
+    Low Stock
+    Barcode
+    Delete
+  */
+
+  grid-template-columns:
+    45px
+    150px
+    110px
+    200px
+    140px
+    100px
+    75px
+    90px
+    90px
+    90px
+    110px
+    120px
+    120px
+    110px
+    130px
+    45px;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  height: 38px;
+
+  background: #f3f4f6;
+
+  border-bottom: 2px solid #d1d5db;
+
+  white-space: nowrap;
+}
+
+.excelHeader div {
+  height: 38px;
+
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+
+  font-weight: 600;
+
+  border-right: 1px solid #d1d5db;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  box-sizing: border-box;
+}
+
+.excelHeader .rowNumber {
+  padding: 0;
+}
+
+.deleteHeader {
+  justify-content: center;
+  color: #ef4444;
+}
+
+/* =========================================
+   ROW
+========================================= */
+
+.excelRow {
+  display: grid;
+
+  grid-template-columns:
+    45px
+    150px
+    110px
+    200px
+    140px
+    100px
+    75px
+    90px
+    90px
+    90px
+    110px
+    120px
+    120px
+    110px
+    130px
+    45px;
+
+  height: 34px;
+
+  align-items: stretch;
+
+  white-space: nowrap;
+
+  box-sizing: border-box;
+}
+
+.excelRow:hover {
+  background: #fafafa;
+}
+
+/* =========================================
+   CELLS
+========================================= */
+
+.excelCell {
+  height: 34px;
+  width: 100%;
+
+  min-width: 0;
+
+  padding: 0 8px;
+
+  border: none;
+  border-right: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+
+  outline: none;
+
+  background: transparent;
+
+  font-size: 13px;
+
+  box-sizing: border-box;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.excelCell:focus {
+  background: #eef2ff;
+}
+
+/* =========================================
+   SELECT
+========================================= */
+
+select.excelCell {
+  cursor: pointer;
+
+  appearance: auto;
+}
+
+/* =========================================
+   ROW NUMBER
+========================================= */
+
+.rowNumber {
+  background: #f9fafb;
+
+  text-align: center;
+
+  font-weight: 600;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-right: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+
+  box-sizing: border-box;
+
+  white-space: nowrap;
+}
+
+/* =========================================
+   DELETE BUTTON
+========================================= */
+
+.deleteBtn {
+  width: 100%;
+  height: 34px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ef4444;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  border-right: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteBtn:hover {
+  background: #fee2e2;
+}
+
+.deleteBtn:active {
+  background: #fecaca;
+}
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 15px;
+
+  flex-wrap: wrap;
+}
+
+.addBtn,
+.submitBtn {
+  border: none;
+
+  color: white;
+
+  padding: 10px 18px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-weight: 500;
+
+  font-size: 14px;
+
+  transition:
+    background 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.addBtn {
+  background: #2563eb;
+}
+
+.addBtn:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.submitBtn {
+  background: #16a34a;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #15803d;
+}
+
+.addBtn:disabled,
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   MODAL OVERLAY
+========================================= */
+
+.modalOverlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================
+   MODAL
+========================================= */
+
+.modal {
+  background: #ffffff;
+
+  width: 400px;
+
+  max-width: 90vw;
+
+  border-radius: 10px;
+
+  padding: 24px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.2);
+
+  box-sizing: border-box;
+}
+
+.modal h3 {
+  margin: 0 0 18px;
+
+  text-align: center;
+
+  font-size: 18px;
+
+  color: #111827;
+}
+
+/* =========================================
+   MODAL INPUT
+========================================= */
+
+.modal input {
+  width: 100%;
+
+  padding: 10px 12px;
+
+  font-size: 15px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 6px;
+
+  margin-bottom: 20px;
+
+  outline: none;
+
+  box-sizing: border-box;
+}
+
+.modal input:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 2px rgba(
+      37,
+      99,
+      235,
+      0.1
+    );
+}
+
+/* =========================================
+   MODAL BUTTONS
+========================================= */
+
+.modalActions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+}
+
+.modalActions button {
+  padding: 9px 18px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+}
+
+.modalActions button:first-child {
+  background: #e5e7eb;
+
+  color: #111827;
+}
+
+.modalActions button:first-child:hover {
+  background: #d1d5db;
+}
+
+.modalActions button:last-child {
+  background: #2563eb;
+
+  color: white;
+}
+
+.modalActions button:last-child:hover {
+  background: #1d4ed8;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 8px;
+  }
+
+  .excelGrid {
+    height: 70vh;
+  }
+
+  .actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .addBtn,
+  .submitBtn {
+    width: 100%;
+  }
+}

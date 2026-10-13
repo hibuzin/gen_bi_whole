@@ -1,0 +1,1186 @@
+/* ── PAGE ── */
+.page {
+  height: 100vh;
+  background: #f5f6f7;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 13px;
+  color: #24292f;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── TOP BAR ── */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-top: 30px;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  min-height: 48px;
+}
+
+.topLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #24292f;
+  cursor: pointer;
+  padding: 0;
+}
+
+.backBtn:hover {
+  color: #1a73e8;
+}
+
+.topRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btnOutline {
+  padding: 7px 8px;
+  border: 1.5px solid #d0d7de;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  color: #24292f;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.btnOutline:hover {
+  border-color: #1a73e8;
+  color: #1a73e8;
+}
+
+.btnPrimary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 20px;
+  border: none;
+  border-radius: 6px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btnPrimary:hover:not(:disabled) {
+  opacity: var(--hover);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── INVOICE BODY ── */
+.invoiceBody {
+  flex: 1;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* ── HEADER SECTION ── */
+
+.headerSection {
+  display: flex;
+  min-height: 150px;
+  flex-shrink: 0;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.billFrom {
+  flex: 1;
+  padding: 18px 40px;
+}
+
+.sectionLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 18px;
+  cursor: pointer;
+}
+
+.partyBox {
+  width: 420px;
+  height: 100px;
+  border: 2px dashed #4a7cff;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.partyBox>div {
+  width: 100%;
+  height: 100%;
+}
+
+.partyBox:not(.partyBoxSelected) {
+  border: 2px dashed #4a7cff;
+}
+
+.partyBox:hover {
+  background: none;
+}
+
+.billFrom {
+  flex: 1;
+  padding: 18px 40px;
+  overflow: visible;
+}
+
+.supplierDetailsGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 12px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.supplierDetailField {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.supplierDropdown {
+  position: absolute;
+  top: 58px;
+  left: 0;
+  width: 100%;
+  max-height: 220px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  z-index: 9999;
+}
+
+.supplierDetailField label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+}
+
+.supplierDetailField input {
+  height: 34px;
+  border: 1px solid #d0d7de;
+  border-radius: 5px;
+  padding: 0 9px;
+  font-size: 13px;
+  background: #f8f9fb;
+  outline: none;
+}
+
+.supplierDetails {
+  width: 100%;
+  padding: 16px;
+}
+
+.supplierDetails h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.supplierDetails p {
+  margin: 4px 0;
+  color: #666;
+}
+
+/* ── INVOICE META ── */
+.invoiceMeta {
+  width: 50%;
+  padding: 16px 20px;
+  border-left: 1px solid #e5e7eb;
+  background: #fafafa;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px 14px;
+  align-content: start;
+}
+
+.metaRow {
+  display: contents;
+}
+
+.metaField {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.metaField label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #7b8494;
+}
+
+.metaField input {
+  height: 34px;
+  border: 1px solid #d6dbe4;
+  border-radius: 6px;
+  padding: 0 10px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  color: #24292f;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.paymentBox {
+  border: 2px dashed #d7d7d7;
+  border-radius: 8px;
+
+  padding: 16px;
+}
+
+.invoiceMeta {
+  border-left: 1px solid #e5e7eb;
+}
+
+.paymentBox {
+  border: 2px dashed #d7d7d7;
+}
+
+.partyBox {
+  width: 420px;
+  height: 100px;
+}
+
+
+/* ── TABLE SECTION ── */
+.tableSection {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  border-bottom: 1px solid #e8eaed;
+}
+
+.itemsTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.itemsTable thead tr {
+  background: #f8f9fa;
+  border-bottom: 1.5px solid #e0e0e0;
+}
+
+.itemsTable thead th {
+  padding: 10px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6e7781;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.itemsTable thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #f8f9fa;
+}
+
+.itemRow {
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: top;
+}
+
+.itemRow:hover {
+  background: #fafbfc;
+}
+
+.itemRow td {
+  padding: 8px;
+  vertical-align: top;
+}
+
+.itemsTable th:not(:last-child),
+.itemsTable td:not(:last-child) {
+  border-right: 1px solid #d1d5db;
+}
+
+.itemsTable th,
+.itemsTable td {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Column widths */
+.colItem {
+  width: 100px;
+}
+
+.colHsn {
+  width: 70px;
+}
+
+.colBarcode {
+  width: 110px;
+}
+
+.colMrp {
+  width: 65px;
+}
+
+.colQty {
+  width: 70px;
+}
+
+.colPrice {
+  width: 90px;
+}
+
+.colDiscount {
+  width: 90px;
+}
+
+.colTax {
+  width: 80px;
+}
+
+.colAmount {
+  width: 90px;
+}
+
+.colAction {
+  width: 40px;
+}
+
+/* ── CELL INPUTS ── */
+.cellInput {
+  width: 100%;
+  height: 100%;
+  padding: 0 4px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #24292f;
+  background: transparent;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.cellInput:focus {
+  background: none;
+  box-shadow: none;
+}
+
+.cellInput::-webkit-outer-spin-button,
+.cellInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cellInput {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.descInput {
+  width: 100%;
+  height: 26px;
+  padding: 0 8px;
+  margin-top: 4px;
+  border: 1px solid #e8eaed;
+  border-radius: 4px;
+  font-size: 11px;
+  color: #6e7781;
+  background: #fafbfc;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.descInput::placeholder {
+  color: #aaa;
+}
+
+.descInput:focus {
+  border-color: #1a73e8;
+}
+
+/* QTY cell */
+.qtyCell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+
+
+.unit {
+  font-size: 11px;
+  color: #6e7781;
+  white-space: nowrap;
+}
+
+/* Discount cell */
+.discountCell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.discRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pct,
+.rupee {
+  font-size: 11px;
+  color: #6e7781;
+  width: 14px;
+  flex-shrink: 0;
+}
+
+/* Tax */
+.taxSelect {
+  width: 100%;
+  height: 30px;
+  padding: 0 6px;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #24292f;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+}
+
+.taxAmt {
+  font-size: 11px;
+  color: #6e7781;
+  margin-top: 3px;
+}
+
+/* Delete row btn */
+.deleteRowBtn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #6e7781;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.deleteRowBtn:hover {
+  background: #fff0f0;
+  border-color: #ffcdd2;
+  color: #e53935;
+}
+
+/* ── ADD ITEM BAR ── */
+.addItemBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #fff;
+  padding: 10px 12px;
+  border-top: 1px dashed #e0e0e0;
+  border-bottom: 1px solid #e8eaed;
+}
+
+.addItemBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  height: 52px;
+
+  background: none;
+  border: 2px dashed #1a73e8;
+  border-radius: 6px;
+
+  color: #1a73e8;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: background 0.15s;
+}
+
+.addItemBtn:hover {
+  background: #f0f4ff;
+}
+
+.scanBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  height: 56px;
+  padding: 0 56px;
+
+  background: none;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+
+  color: #36383a;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.scanBtn:hover {
+  border-color: #1a73e8;
+  color: #1a73e8;
+  background: #f0f4ff;
+}
+
+/* ── SUBTOTAL ROW ── */
+.subtotalRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 40px;
+  padding: 10px 16px;
+  background: #f8f9fa;
+  border-top: 1px solid #e8eaed;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6e7781;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ── INVOICE FOOTER ── */
+.invoiceFooter {
+  flex-shrink: 0;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  padding: 8px 16px;
+}
+
+.footerColumns {
+  display: grid;
+  grid-template-columns: repeat(4, 260px);
+  justify-content: end;
+  gap: 10px;
+}
+
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.footerField {
+  display: grid;
+  grid-template-columns: 120px 120px;
+  align-items: center;
+  min-height: 30px;
+  font-size: 12px;
+}
+
+.summaryField {
+  width: 150px;
+  grid-template-columns: auto auto;
+  column-gap: 12px;
+
+}
+
+.summaryField strong {
+  text-align: left;
+}
+
+.footerField>span:first-child {
+  color: #6e7781;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.footerField strong {
+  text-align: right;
+  color: #24292f;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.footerInput {
+  width: 130px;
+  height: 28px;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 7px;
+  border: 1px solid #d0d7de;
+  border-radius: 5px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.footerInput span {
+  color: #6e7781;
+  font-size: 12px;
+}
+
+.footerInput input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-align: right;
+  font-size: 12px;
+}
+
+.footerSelect,
+.footerTextInput {
+  width: 90px;
+  height: 28px;
+  justify-self: end;
+  border: 1px solid #d0d7de;
+  border-radius: 5px;
+  padding: 0 7px;
+  background: #fff;
+  outline: none;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+
+.totalAmountField strong {
+  color: var(--sidebar-bg);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.footerInput {
+  width: 120px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 5px;
+  padding: 0 7px;
+  border: 1px solid #d0d7de;
+  border-radius: 5px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.footerInput span {
+  color: #6e7781;
+  font-size: 12px;
+}
+
+.footerInput input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 12px;
+  text-align: right;
+}
+
+.footerSelect,
+.footerTextInput {
+  width: 120px;
+  height: 28px;
+  justify-self: end;
+  border: 1px solid #d0d7de;
+  border-radius: 5px;
+  padding: 0 7px;
+  background: #fff;
+  outline: none;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+.totalAmountField strong {
+  color: var(--sidebar-bg);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.placeOfSupply {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.placeOfSupply label {
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.placeOfSupply input {
+  width: 170px;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  font-size: 13px;
+}
+
+.placeOfSupply input:focus {
+  border-color: #056574;
+}
+
+@media (max-width: 1100px) {
+  .footerColumns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .footerColumns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Balance */
+.balanceLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.balRed {
+  color: #e53935;
+}
+
+.balGreen {
+  color: #2e7d32;
+}
+
+.barcodeOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.barcodeModal {
+  width: 700px;
+  max-width: 90%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.barcodeInput {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* Overlay */
+.addItemsOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal */
+.addItemsModal {
+  background: #fff;
+  border-radius: 12px;
+  width: 900px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header */
+.addItemsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+}
+
+.addItemsHeader h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #555;
+}
+
+/* Toolbar */
+.addItemsToolbar {
+  display: flex;
+  gap: 12px;
+  padding: 0 24px 16px;
+  align-items: center;
+}
+
+.searchWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: 2px solid #6c63ff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  gap: 8px;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+}
+
+.searchIcon {
+  color: #888;
+}
+
+.barcodeIcon {
+  color: #888;
+  cursor: pointer;
+}
+
+.categorySelect {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #555;
+  min-width: 160px;
+}
+
+.createNewBtn {
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Table */
+.addItemsTableWrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 24px;
+}
+
+.addItemsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.addItemsTable thead tr {
+  background: #f5f5f5;
+}
+
+.addItemsTable th {
+  text-align: left;
+  padding: 12px 14px;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 80px 0;
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* Shortcuts */
+.shortcuts {
+  padding: 12px 24px;
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  gap: 24px;
+  border-top: 1px solid #eee;
+}
+
+.shortcuts kbd {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+/* Footer */
+.addItemsFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-top: 1px solid #eee;
+}
+
+.cancelBtn {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.addToBillBtn {
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.addToBillBtn:disabled {
+  background: #c4c1f5;
+  cursor: not-allowed;
+}
+
+.cellInput::-webkit-outer-spin-button,
+.cellInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cellInput {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.supplierFieldBox {
+  position: relative;
+  width: 100%;
+}
+
+.supplierInput {
+  width: 100%;
+  height: 42px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-size: 13px;
+  outline: none;
+  background: #fff;
+}
+
+.supplierInput:focus {
+  border-color: #1a73e8;
+}
+
+.supplierDropdown {
+  position: absolute;
+  top: 46px;
+  left: 0;
+  width: 100%;
+  max-height: 220px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  z-index: 9999;
+}
+
+.supplierOption {
+  padding: 9px 12px;
+  cursor: pointer;
+}
+
+.supplierOption:hover {
+  background: #f3f6ff;
+}
+
+.supplierName {
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+}
+
+.supplierSub {
+  margin-top: 3px;
+  font-size: 11px;
+  color: #777;
+}
+
+.noSupplier {
+  padding: 10px;
+  font-size: 13px;
+  color: #777;
+  text-align: center;
+}
+
+.rowSearchBox {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+
+.rowDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 4;
+  background: #fff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  max-height: 220px;
+  overflow-y: auto;
+  width: 220px;
+}
+
+.rowSearchInput {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0;
+  font-size: 13px;
+  color: #24292f;
+  font-family: inherit;
+  border: none;
+}
+
+.rowSearchInput:focus {
+  background: none;
+  box-shadow: none;
+  border-radius: 4px;
+}
+
+.rowDropdownItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.rowDropdownItem:hover {
+  background: #e8f3f4;
+}
+
+.highlightedSupplier {
+  background: #f1f5f5;
+}
+
+.rowDropdownItemActive {
+  background: #e8f3f4;
+  border-left: 3px solid #056574;
+}
+
+@media (min-width: 1600px) {
+  .partyBox {
+    width: 620px;
+  }
+
+  .invoiceMeta {
+    width: 520px;
+  }
+
+  .itemsTable {
+    min-width: 1850px;
+  }
+
+  .colItem {
+    width: 200px;
+  }
+
+  .colMrp {
+    width: 110px;
+  }
+
+  .colAmount {
+    width: 100px;
+  }
+
+  .scanBtn {
+    padding: 0 80px;
+  }
+
+  .totalsPanel {
+    width: 460px;
+  }
+}

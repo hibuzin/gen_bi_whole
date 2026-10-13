@@ -1,0 +1,209 @@
+.container {
+  height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+  color: #24292f;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.createBtn {
+  height: 34px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 6px;
+  background: var(--button-bg);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.createBtn:hover {
+  opacity: 0.7;
+}
+
+.heading {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #24292f;
+}
+
+.subHeading {
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: #7b8494;
+}
+
+.refreshBtn {
+  height: 34px;
+  padding: 0 16px;
+  border: 1px solid #288899;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #2d88a3;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.refreshBtn:hover:not(:disabled) {
+  background: #f1f0fc;
+}
+
+.refreshBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.summaryCard {
+  width: 190px;
+  margin: 16px 20px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.summaryCard span {
+  font-size: 12px;
+  color: #7b8494;
+}
+
+.summaryCard strong {
+  font-size: 22px;
+  color: #24292f;
+}
+
+.tableWrapper {
+  flex: 1;
+  min-height: 0;
+  margin: 0 20px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1050px;
+}
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 11px 12px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e5e7eb;
+  border-right: 1px solid #e5e7eb;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6e7781;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  border-right: 1px solid #e5e7eb;
+  font-size: 13px;
+  color: #24292f;
+  vertical-align: middle;
+}
+
+.table th:last-child,
+.table td:last-child {
+  border-right: none;
+}
+
+.table tbody tr:hover {
+  background: #f1f0fc;
+}
+
+.offerName {
+  font-weight: 600;
+  color: #24292f;
+}
+
+.typeBadge,
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.billBadge {
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.buyGetBadge {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.activeStatus {
+  background: #ecfdf3;
+  color: #15803d;
+}
+
+.inactiveStatus {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.emptyState,
+.errorState {
+  height: 220px;
+  text-align: center !important;
+  color: #8b949e !important;
+}
+
+.errorState {
+  color: #dc2626 !important;
+}
+
+.tableWrapper::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.tableWrapper::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border-radius: 10px;
+}
+
+.tableWrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}

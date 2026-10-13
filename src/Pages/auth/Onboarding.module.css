@@ -1,0 +1,281 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  padding: 40px 10px 10px 10px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1300px;
+  min-height: 420px;
+  border-radius: 8px;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 540px;
+}
+
+/* ─── LEFT ─────────────────────────────────── */
+
+.loginImage {
+  width: 580px;
+  height: auto;
+  object-fit: contain;
+  margin-top: 25px;
+}
+
+.left {
+  flex: 1;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.brand {
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.orange {
+  color:  #106161;
+}
+
+.dark {
+  color: #1e293b;
+}
+
+.left h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.left h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #106161;
+  margin: -6px 0 0;
+}
+
+.left p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+  max-width: 280px;
+  margin: 0;
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 60px;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #444;
+}
+
+.badgeIcon {
+  color: #106161;
+  font-size: 14px;
+}
+
+/* ISO BADGE */
+.isoBadge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.isoCircle {
+  width: 22px;
+  height: 22px;
+
+  border: 2px solid #106161;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 7px;
+  font-weight: 700;
+  color: #106161;
+  font-family: Arial, sans-serif;
+}
+
+.isoText {
+  font-size: 10px;
+  color: #444;
+  font-weight: 500;
+}
+
+/* ─── DIVIDER ───────────────────────────────── */
+
+.dividerWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1px;
+  align-self: stretch;
+  padding: 5% 0;
+}
+
+.dividerLine {
+  width: 1px;
+  height: 120%;
+  background: #dfdfe1;
+  border-radius: 1px;
+}
+
+/* ─── RIGHT ─────────────────────────────────── */
+
+.right {
+  flex: 1;
+  padding: 48px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formCard h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.topText {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.field input {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 4px;
+  width: 500px;
+  padding: 8px 14px;
+  font-size: 14px;
+  color: #1e293b;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  font-family: inherit;
+}
+
+.field input:focus {
+  border-color: #106161;
+  background: #ffffff;
+}
+
+.field input::placeholder {
+  color: #cbd5e1;
+}
+
+.formCard button {
+  width: 500px;
+  background: #106161;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 4px;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.formCard button:hover {
+  opacity: 0.9;
+}
+
+.formCard button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loginText {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.loginText span {
+  font-weight: 600;
+  color: #5b4df7;
+  cursor: pointer;
+}
+
+.loginText span:hover {
+  text-decoration: underline;
+}
+
+/* ─── RESPONSIVE ────────────────────────────── */
+
+@media (max-width: 680px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .dividerWrap {
+    width: 90%;
+    height: 1px;
+    align-self: center;
+    padding: 0 5%;
+  }
+
+  .dividerLine {
+    width: 100%;
+    height: 1px;
+  }
+
+  .left {
+    padding: 36px 24px 24px;
+  }
+
+  .right {
+    padding: 24px 24px 36px;
+  }
+}

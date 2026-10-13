@@ -1,0 +1,629 @@
+.page {
+  height: calc(100vh - 40px);
+  min-height: 0;
+  padding: 20px;
+  background: #ffffff;
+  color: #18181b;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.pageHeader h1 {
+  margin: 0;
+  font-size: 23px;
+  font-weight: 700;
+  color: #18181b;
+}
+
+.pageHeader p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #71717a;
+}
+
+.resetButton,
+.printButton,
+.generateButton {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.resetButton {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 15px;
+  border: 1px solid #dedee8;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #4b4b57;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.resetButton:hover {
+ opacity: var(--hover);
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: minmax(340px, 0.9fr) minmax(440px, 1.3fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.formCard,
+.previewCard {
+  border: 1px solid #e7e7ef;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(31, 31, 45, 0.04);
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 17px 18px;
+  border-bottom: 1px solid #eeeeF4;
+}
+
+.titleIcon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 9px;
+  font-size: 17px;
+}
+
+.cardTitle h2,
+.previewHeader h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.cardTitle p,
+.previewHeader p {
+  margin: 4px 0 0;
+  color: #8a8a96;
+  font-size: 12px;
+}
+
+.formBody {
+  padding: 19px;
+}
+
+.formGroup {
+  margin-bottom: 19px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 7px;
+  color: #3f3f46;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.formGroup label span {
+  color: #e05252;
+}
+
+.formGroup > input,
+.productSearchWrapper > input {
+  width: 100%;
+  height: 42px;
+  border: 1px solid #dedee8;
+  border-radius: 7px;
+  outline: none;
+  background: #ffffff;
+  color: #27272a;
+  font-family: inherit;
+  font-size: 13px;
+  transition: 0.2s ease;
+}
+
+.formGroup > input {
+  padding: 0 12px;
+}
+
+
+.fieldHint {
+  display: block;
+  margin-top: 6px;
+  color: #92929d;
+  font-size: 11px;
+}
+
+.productSearchWrapper {
+  position: relative;
+}
+
+.productSearchWrapper > input {
+  padding: 0 40px;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 13px;
+  z-index: 2;
+  color: #8b8b96;
+  font-size: 16px;
+  transform: translateY(-50%);
+}
+
+.clearButton {
+  position: absolute;
+  top: 50%;
+  right: 9px;
+  z-index: 3;
+  display: grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #8b8b96;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.clearButton:hover {
+  background: #f1f0fc;
+  color: #111;
+}
+
+.productDropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  left: 0;
+  z-index: 50;
+  max-height: 260px;
+  overflow-y: auto;
+  border: 1px solid #dedee8;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(31, 31, 45, 0.14);
+}
+
+.productOption {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 13px;
+  border: none;
+  border-bottom: 1px solid #f0f0f4;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.productOption:last-child {
+  border-bottom: none;
+}
+
+.productOption:hover {
+  background: #f5f4fd;
+}
+
+.productOption strong {
+  display: block;
+  color: #27272a;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.productOption p {
+  margin: 4px 0 0;
+  color: #8a8a95;
+  font-size: 11px;
+}
+
+.productOptionRight {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.productOptionRight span {
+  display: block;
+  color: #111;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.productOptionRight small {
+  display: block;
+  margin-top: 4px;
+  color: #8a8a95;
+  font-size: 10px;
+}
+
+.dropdownMessage {
+  padding: 18px;
+  color: #8a8a95;
+  font-size: 12px;
+  text-align: center;
+}
+
+.selectedProduct {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 19px;
+  padding: 12px;
+  border: 1px solid #dcd9f5;
+  border-radius: 8px;
+  background: var(--button-bg);
+}
+
+.selectedIcon {
+  padding-top: 1px;
+  font-size: 18px;
+}
+
+.selectedDetails {
+  min-width: 0;
+}
+
+.selectedDetails strong {
+  display: block;
+  color: #302b57;
+  font-size: 13px;
+}
+
+.selectedMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 7px;
+}
+
+.selectedMeta span {
+  padding: 4px 7px;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #686777;
+  font-size: 10px;
+}
+
+.generateButton {
+  display: flex;
+  width: 100%;
+  height: 43px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 7px;
+  background: var(--button-bg);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.generateButton:hover:not(:disabled) {
+  opacity: var(--hover);
+}
+
+.generateButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.previewCard {
+  min-height: 440px;
+}
+
+.previewHeader {
+  display: flex;
+  min-height: 73px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 18px;
+  border-bottom: 1px solid #eeeeF4;
+}
+
+.printButton {
+  display: flex;
+  min-height: 37px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 15px;
+  border-radius: 7px;
+  background: #27272a;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.printButton:hover:not(:disabled) {
+  background: #111113;
+}
+
+.printButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.previewBody {
+  display: flex;
+  min-height: 365px;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+}
+
+.barcodeLabel {
+  width: min(100%, 330px);
+  padding: 18px;
+  border: 1px dashed #a7a7b1;
+  border-radius: 8px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.barcodeProductName {
+  overflow: hidden;
+  margin-bottom: 8px;
+  color: #27272a;
+  font-size: 15px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.barcodeLabel svg {
+  width: 100%;
+  max-width: 280px;
+}
+
+.barcodeDetails {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 8px;
+  color: #3f3f46;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.barcodeFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 11px;
+  padding-top: 9px;
+  border-top: 1px solid #ededf2;
+  color: #81818c;
+  font-size: 10px;
+}
+
+.emptyPreview {
+  max-width: 290px;
+  text-align: center;
+}
+
+.emptyBarcode {
+  display: flex;
+  height: 70px;
+  align-items: stretch;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 17px;
+  opacity: 0.18;
+}
+
+.emptyBarcode span {
+  display: block;
+  width: 5px;
+  background: #27272a;
+}
+
+.emptyBarcode span:nth-child(2),
+.emptyBarcode span:nth-child(5),
+.emptyBarcode span:nth-child(7) {
+  width: 10px;
+}
+
+.emptyBarcode span:nth-child(3),
+.emptyBarcode span:nth-child(6) {
+  width: 3px;
+}
+
+.emptyPreview h3 {
+  margin: 0;
+  color: #484852;
+  font-size: 15px;
+}
+
+.emptyPreview p {
+  margin: 7px 0 0;
+  color: #9696a0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.toast {
+  position: fixed;
+  top: 52px;
+  right: 20px;
+  z-index: 1000;
+  min-width: 250px;
+  padding: 12px 16px;
+  border-radius: 7px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+.toastSuccess {
+  background: #23835f;
+}
+
+.toastError {
+  background: #d34d4d;
+}
+
+.barcodeModeGroup {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  padding: 4px;
+  border-radius: 8px;
+  background: #f4f4f8;
+}
+
+.modeButton {
+  height: 38px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: #71717a;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.modeButton:hover {
+  background: #ffffff;
+}
+
+.activeMode {
+  border-color: #d9d5f5;
+  background: #ffffff;
+  color: var(--sidebar-bg);
+  box-shadow: 0 2px 7px rgba(60, 50, 120, 0.08);
+}
+
+/* =========================================
+   COMBO OFFER SELECT
+========================================= */
+
+.comboSelectWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.comboSelect {
+  width: 100%;
+  height: 42px;
+  padding: 0 38px 0 12px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+
+  background: #ffffff;
+  color: #111827;
+
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.comboSelect:hover {
+  border-color: #9ca3af;
+}
+
+.comboSelect:focus {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.08);
+}
+
+/* SELECTED COMBO INFO */
+
+.selectedCombo {
+  padding: 12px 14px;
+  border: 1px solid #d1fae5;
+  border-radius: 7px;
+  background: #f0fdfa;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.selectedCombo strong {
+  font-size: 14px;
+  color: #111827;
+}
+
+.selectedComboDetails {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.selectedComboDetails span {
+  white-space: nowrap;
+}
+
+@media (max-width: 1000px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 12px;
+  }
+
+  .pageHeader {
+    align-items: flex-start;
+  }
+
+  .pageHeader h1 {
+    font-size: 19px;
+  }
+
+  .previewHeader {
+    align-items: flex-start;
+  }
+
+  .barcodeDetails {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

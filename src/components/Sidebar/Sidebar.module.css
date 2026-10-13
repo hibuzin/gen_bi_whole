@@ -1,0 +1,605 @@
+.sidebar {
+  width: 230px;
+  background: var(--sidebar-bg);
+
+  position: fixed;
+  top: 25px;
+  left: 0px;
+  bottom: 0px;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.25s cubic-bezier(0.4, 0, 1, 1);
+  z-index: 100;
+}
+
+.sidebar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("../../assets/texture.png");
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.06;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* TOP FIXED */
+
+.topFixed {
+  flex-shrink: 0;
+}
+
+
+.menuWrapper {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.menuWrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.menuWrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.menuWrapper::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.topBar {
+  display: flex;
+  align-items: flex-start;
+  padding: 18px 16px 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.businessInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+  background: #29ceb2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.businessText {
+  overflow: hidden;
+}
+
+.businessText h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.businessSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.billRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.billBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 150px;
+  padding: 0 14px;
+  height: 38px;
+  border: none;
+  border-radius: 0 18px 18px 0;
+  background: #044d58;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 520;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.billBtn:hover {
+  opacity: 0.7;
+
+}
+
+.menuBtn {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  font-size: var(--sidebar-font);
+
+  transition: 0.2s ease;
+}
+
+.menuBtn:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.billBtn:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.businessText p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #bdbdbd;
+}
+
+.collapsed .businessInfo {
+  display: none;
+}
+
+.menu {
+  list-style: none;
+  padding: 6px 0;
+  margin: 0;
+  font-size: var(--sidebar-font);
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.backItem {
+  margin: 10px 12px 14px;
+  padding: 10px 12px;
+
+  background: #ffffff;
+  color: #000000;
+
+  border-radius: 20px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.arrow {
+  font-size: var(--sidebar-font);
+  color: #a1a1aa;
+
+  display: flex;
+  align-items: center;
+
+  transition: transform 0.2s ease;
+}
+
+.item:hover {
+  background: #075460;
+}
+
+.item:hover::before {
+  background: #055966;
+}
+
+
+
+.item {
+  position: relative;
+  height: 40px;
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+  gap: 6px;
+  color: #fff;
+
+  background: transparent;
+}
+
+
+
+
+/* Keep icon/text above background */
+.item>* {
+  position: relative;
+  z-index: 1;
+}
+
+.active {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9px;
+  margin: 2px 0 2px 0;
+
+  background: linear-gradient(90deg,
+      #03434d 0%,
+      #056574 35%,
+      #056574 65%,
+      #03434d 100%);
+  box-shadow:
+    0 0 8px rgba(5, 101, 116, 0.20),
+    inset 0 0 12px rgba(255, 255, 255, 0.05);
+
+  color: #ffffff;
+}
+
+/* Shining effect */
+.active::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -100%;
+
+  width: 60%;
+  height: 100%;
+
+  background: linear-gradient(100deg,
+      transparent,
+      rgba(255, 255, 255, 0.10),
+      transparent);
+
+  transform: skewX(-20deg);
+
+  animation: activeShine 2.8s ease-in-out infinite;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes activeShine {
+  0% {
+    left: -100%;
+  }
+
+  45%,
+  100% {
+    left: 150%;
+  }
+}
+
+/* Keep icon/text above shine */
+.item>* {
+  position: relative;
+  z-index: 3;
+}
+
+.subMenu {
+  display: flex;
+  flex-direction: column;
+  margin-left: 32px;
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+.subItem {
+  padding: 8px 10px;
+  font-size: 12px;
+  color: #d1d1d1;
+  cursor: pointer;
+
+  border-radius: 4px;
+  transition: all 0.2s ease;
+
+  display: flex;
+  align-items: center;
+}
+
+.subItem:hover {
+  background: #045562;
+  color: #ffffff;
+}
+
+.toggleBtn {
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.collapsed {
+  width: 60px;
+}
+
+.collapsed .item {
+  justify-content: center;
+  padding: 0;
+  border-left: none;
+}
+
+.collapsed .topBar {
+  justify-content: flex-start;
+  padding-left: 14px;
+}
+
+.collapsed .menuItem {
+  justify-content: flex-start;
+}
+
+.menuItem .icon {
+  font-size: var(--sidebar-icon);
+}
+
+.collapsed .arrow {
+  display: none;
+}
+
+.text {
+  font-size: 13px;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.collapsed .text {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.settingsButton {
+  padding: 10px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.settingsButton:hover {
+  background: #108383;
+}
+
+.bottomSettings {
+  padding: 14px;
+
+  background-color: #035566;
+  border-top:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  flex-shrink: 0;
+
+  color: #fff;
+}
+
+/* ===== COMMON SIDEBAR STYLES ===== */
+
+.item,
+.subItem,
+.settingsText,
+.menuItem span {
+  font-size: var(--sidebar-font);
+}
+
+.businessText h4 {
+  font-size: 14px;
+}
+
+.businessText p {
+  font-size: 12px;
+}
+
+/* ===== SETTINGS SIDEBAR ===== */
+
+
+
+.settingsSidebar {
+  background: #ffffff;
+}
+
+.settingsDivider {
+  height: 2px;
+  margin: 12px 16px;
+  background: rgba(5, 101, 116, 0.12);
+}
+
+/* Settings text */
+.settingsSidebar .item,
+.settingsSidebar .subItem,
+.settingsSidebar .settingsText,
+.settingsSidebar .menuItem span,
+.settingsSidebar .text {
+  color: #056574;
+}
+
+.settingsSidebar .icon {
+  color: #056574;
+  font-size: var(--sidebar-icon);
+}
+
+.settingsSidebar .arrow {
+  color: #056574;
+}
+
+.settingsSidebar .businessText h4 {
+  color: #056574;
+}
+
+.settingsSidebar .businessText p {
+  color: #5f858a;
+}
+
+.settingsSidebar .settingsDivider {
+  background: rgba(5, 101, 116, 0.12);
+}
+
+.settingsSidebar .bottomSettings {
+  background: #ffffff;
+  border-top: 1px solid rgba(5, 101, 116, 0.12);
+}
+
+/* Settings hover */
+.settingsSidebar .item:hover,
+.settingsSidebar .settingsButton:hover,
+.settingsSidebar .subItem:hover {
+  background: #056574;
+}
+
+/* Active settings item */
+.settingsSidebar .active {
+  background: linear-gradient(90deg,
+      #03434d 0%,
+      #056574 35%,
+      #087583 65%,
+      #0a8490 100%);
+
+  color: #ffffff;
+}
+
+/* Hover + active text/icon */
+.settingsSidebar .item:hover .menuItem span,
+.settingsSidebar .item:hover .icon,
+.settingsSidebar .item:hover .arrow,
+.settingsSidebar .subItem:hover,
+.settingsSidebar .active,
+.settingsSidebar .active .menuItem span,
+.settingsSidebar .active .icon,
+.settingsSidebar .active .arrow {
+  color: #ffffff;
+}
+
+/* Settings heading */
+.menuHeading {
+  margin: 16px 18px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(5, 101, 116, 0.55);
+  user-select: none;
+}
+
+.settingsSidebar .menuHeading {
+  color: #056574;
+}
+
+.collapsed .menuHeading {
+  display: none;
+}
+
+.plusIcon {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+
+
+
+.menuItem .homeIcon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.confirmOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.confirmDialog {
+  width: 340px;
+  max-width: calc(100vw - 40px);
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+.confirmDialog h3 {
+  margin: 0 0 10px;
+  color: #222;
+  font-size: 18px;
+}
+
+.confirmDialog p {
+  margin: 0 0 24px;
+  color: #666;
+  font-size: 14px;
+}
+
+.confirmActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.confirmActions button {
+  padding: 9px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cancelButton {
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.logoutButton {
+  background: #b42318;
+  border: 1px solid #b42318;
+  color: #fff;
+}

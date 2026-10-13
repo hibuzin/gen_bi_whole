@@ -1,0 +1,14 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+
+  padding: 24px;
+  border-radius: 5px;
+}
+
+.heading {
+  font-size: var(--heading-text);
+  font-weight: var(--heading-fontweight);
+  color: var(--heading-color);
+}

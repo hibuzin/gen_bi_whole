@@ -1,0 +1,216 @@
+.container {
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+
+  height: calc(100vh - 40px);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: var(--heading-text);
+  font-weight: var(--heading-fontweight);
+  color: var(--heading-color);
+}
+
+/* TABLE */
+.tableWrap {
+  width: 100%;
+  flex: none;
+  min-height: 0;
+  overflow: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 1px;
+  background: #fff;
+  scrollbar-width: thin;
+}
+
+.tableWrap::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.tableWrap::-webkit-scrollbar-thumb {
+  background: #c9c9c9;
+  border-radius: 10px;
+}
+
+.tableWrap::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.tableWrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+}
+
+.tbl thead {
+  background: #fafafa;
+}
+
+.tbl thead th {
+  position: sticky;
+  top: 0;
+  background: #fafafa;
+  z-index: 10;
+
+  border-right: 1px solid #d1d5db;
+}
+
+.tbl th {
+  padding: 10px 18px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #777;
+  border-bottom: 1px solid #ececec;
+  border-right: 1px solid #d1d5db;
+  white-space: nowrap;
+}
+
+.tbl td {
+  padding: 10px 18px;
+  font-size: 13px;
+  color: #111;
+  height: 50px;
+  border-bottom: 1px solid #f3f3f3;
+  border-right: 1px solid #d1d5db;
+  vertical-align: middle;
+}
+
+.tbl tbody tr:hover {
+  background: var(--sidebar-hover);
+}
+
+.tbl th:last-child,
+.tbl td:last-child {
+  border-right: none;
+}
+
+/* CELLS */
+.periodCell {
+  font-weight: 600;
+  color: #111827;
+}
+
+.salesCell {
+  font-weight: 700;
+  color: #4c3cce;
+}
+
+/* LOADER */
+.tableLoader {
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+  background: #fff;
+  border: none;
+}
+
+.tbl tbody tr:has(.tableLoader) td {
+  border-bottom: none !important;
+  border-right: none !important;
+  padding: 0 !important;
+}
+
+.spinner {
+  width: 34px;
+  height: 34px;
+  border: 3px solid #e5e7eb;
+  border-top-color: var(--sidebar-hover);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.tableLoader p {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  margin: 0;
+}
+
+
+
+/* TODAY PAYMENTS */
+
+.paymentSection {
+  margin-top: 24px;
+  flex-shrink: 0;
+}
+
+.paymentSection .header {
+  margin-bottom: 14px;
+}
+
+.paymentSummary {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.paymentSummary > div {
+  min-width: 180px;
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.paymentSummary span {
+  font-size: 12px;
+  color: #777;
+}
+
+.paymentSummary strong {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.paymentSection .tableWrap {
+  flex: none;
+  max-height: 160px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .container {
+    padding: 14px;
+  }
+
+  .tbl {
+    min-width: 760px;
+  }
+}

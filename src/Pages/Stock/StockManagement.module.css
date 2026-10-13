@@ -1,0 +1,260 @@
+.container {
+  height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.searchInput {
+  width: 260px;
+  height: 42px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+/* TABS */
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #ececec;
+  flex-shrink: 0;
+}
+
+.tab {
+  border: none;
+  background: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.tab:hover {
+  color: #036666;
+}
+
+.activeTab {
+  color: #036666;
+  border-bottom: 2px solid #036666;
+}
+
+/* TABLE */
+
+.tableWrapper {
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid #ececec;
+  border-radius: 1px;
+  background: #fff;
+}
+
+.table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.tableLoader {
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+  background: #fff;
+  border: none;
+}
+
+.table tbody tr:has(.tableLoader) td {
+  border-bottom: none !important;
+  border-right: none !important;
+  padding: 0 !important;
+}
+
+.spinner {
+  width: 34px;
+  height: 34px;
+  border: 3px solid #e5e7eb;
+  border-top-color: var(--sidebar-bg);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.tableLoader p {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  margin: 0;
+}
+
+.emptyState {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 14px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.table thead {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #fafafa;
+}
+
+.table th,
+.table td {
+  white-space: normal;
+  word-break: break-word;
+}
+
+.table thead tr {
+  background: #fafafa;
+}
+
+.table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-transform: none;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #222;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.table th:not(:last-child),
+.table td:not(:last-child) {
+  border-bottom: 1px solid #e5e7eb;
+  border-right: 1px solid #d1d5db;
+}
+
+.tableRow {
+  transition: 0.2s;
+}
+
+.tableRow:hover {
+  background: var(--sidebar-hover);
+}
+
+.productName {
+  font-weight: 600;
+  color: #111827;
+}
+
+.stockCount {
+  font-weight: 700;
+  color: #111827;
+}
+
+/* STATUS BADGES */
+
+.available {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  background: #ecfdf3;
+  color: #1f9d55;
+}
+
+.lowStock {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  background: #fef6e7;
+  color: #e08e0b;
+}
+
+.outStock {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.empty {
+  text-align: center;
+  padding: 30px;
+  color: #888;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.limitInput {
+  width: 120px;
+  height: 38px;
+  border: 1px solid #dcdfe4;
+  border-radius: 8px;
+  padding: 0 12px;
+  outline: none;
+  font-size: 13px;
+  background: #fff;
+  -moz-appearance: textfield;
+}
+
+.limitInput::-webkit-outer-spin-button,
+.limitInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

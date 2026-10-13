@@ -1,0 +1,419 @@
+/* ── Wrapper ── */
+.posWrap {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 13px;
+  color: #1a1a1a;
+  overflow: hidden;
+}
+
+
+
+/* ── Main Body ── */
+.mainBody {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Popup ── */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.billingPopup {
+  width: 780px;
+  max-width: 95vw;
+  max-height: 92vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.modalHeader h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.modalHeader button {
+  border: none;
+  background: #f3f4f6;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.modalHeader button:hover {
+  background: #e5e7eb;
+}
+
+.paymentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.paymentGrid .customerFieldsRow {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  margin-top: 0;
+}
+
+.paymentGrid label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.paymentGrid .customerInput,
+.paymentGrid select {
+  width: 100%;
+  height: 36px;
+}
+
+.loyaltyInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #3730a3;
+}
+
+.paymentSummary {
+  grid-column: 1 / -1;
+  border-top: 1px dashed #d1d5db;
+  padding-top: 10px;
+  margin-top: 4px;
+}
+
+.paymentSummary .summaryRow {
+  font-size: 13px;
+}
+
+.paymentSummary .summaryTotal {
+  font-size: 15px;
+  background: #f0fdf4;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 6px;
+}
+
+.splitBox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.splitBox input {
+  height: 34px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 0 8px;
+  font-size: 13px;
+  outline: none;
+}
+
+
+.cancelBtn {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #374151;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.cancelBtn:hover {
+  background: #f9fafb;
+}
+
+.printBtn {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background: #4f46e5;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.printBtn:hover {
+  background: #4338ca;
+}
+
+.printBtn:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+}
+
+/* ── Toast ── */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 2000;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.toast_success {
+  background: #166534;
+  color: #ffffff;
+}
+
+.toast_error {
+  background: #991b1b;
+  color: #ffffff;
+}
+
+.cellInput {
+  height: 28px;
+  width: 100px;
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+  padding: 0 8px;
+  font-size: 13px;
+  outline: none;
+  background: transparent;
+  color: #111827;
+}
+
+.table tbody tr:hover .cellInput {
+  background: #f1f0fc;
+}
+
+.cellInput:focus {
+  background: none;
+}
+
+.rowSearchBox {
+  position: relative;
+}
+
+.rowDropdown {
+  position: absolute;
+  top: 31px;
+  left: 0;
+  width: 260px;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  z-index: 9999;
+}
+
+.rowDropdownItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.rowDropdownItem:hover {
+  background: #f6f8fa;
+}
+
+.rowDropdownItem p {
+  margin: 2px 0 0;
+  font-size: 11px;
+  color: #666;
+}
+
+.rowDropdownItem span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.receiptPrintOnly {
+  display: none;
+}
+
+.receiptPrintOnly {
+  display: none;
+}
+
+.hiddenScanInput {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  padding: 0;
+  border: none;
+  pointer-events: none;
+}
+
+.balanceAlertOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.42);
+}
+
+.balanceAlertPopup {
+  width: 340px;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.28);
+}
+
+.balanceAlertHeader {
+  padding: 11px 15px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  background: #4338ca;
+}
+
+.balanceAlertBody {
+  padding: 22px 18px;
+  text-align: center;
+}
+
+.balanceAlertBody p {
+  margin: 0 0 8px;
+  color: #536170;
+  font-size: 13px;
+}
+
+.balanceAlertBody strong {
+  color: #d32f2f;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.balanceAlertActions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px 14px;
+}
+
+.balanceContinueBtn,
+.balanceCancelBtn {
+  min-width: 100px;
+  height: 36px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.balanceContinueBtn {
+  color: #ffffff;
+  background: #4338ca;
+  border: 1px solid #075da8;
+}
+
+.balanceCancelBtn {
+  color: #354655;
+  background: #ffffff;
+  border: 1px solid #aeb8c1;
+}
+
+.customerSummary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.customerSummaryItem {
+  min-width: 0;
+  padding: 9px 10px;
+  background: #f8f9fb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.customerSummaryItem span {
+  color: #7b8494;
+  font-size: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.customerSummaryItem strong {
+  color: #24292f;
+  font-size: 12px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.customerSummaryItem:last-child strong {
+  color: #d32f2f;
+}
+
+.receiptPrintOnly {
+  display: none;
+}
+
+@media print {
+  .receiptPrintOnly {
+    display: block;
+  }
+  /* rest of the POS UI hide pannanum */
+  body * {
+    visibility: hidden;
+  }
+  .receiptPrintOnly, .receiptPrintOnly * {
+    visibility: visible;
+  }
+}
