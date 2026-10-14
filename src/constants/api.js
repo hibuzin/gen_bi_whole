@@ -1,6 +1,6 @@
 //const BASE_URL = "https://pos-backend-6uh4.onrender.com/api";
 
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = "http://localhost:5001/api";
 
 
 
