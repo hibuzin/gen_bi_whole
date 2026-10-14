@@ -47,8 +47,8 @@
     "vite": "^8.0.10"
   },
   "build": {
-    "appId": "com.hibuz.billing",
-    "productName": "Hibuz Billing",
+    "appId": "com.hibuz.billing2",
+    "productName": "HibuzBilling 2",
     "win": {
       "target": "nsis"
     },

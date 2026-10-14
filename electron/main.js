@@ -9,6 +9,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
+app.setPath(
+  "userData",
+  path.join(app.getPath("appData"), "HibuzBilling2")
+);
+
+
 let mainWindow;
 let backendProcess;
 
@@ -334,7 +340,7 @@ function startBackend() {
   });
 }
 
-function waitForBackend(port = 5000, host = "127.0.0.1", timeout = 30000) {
+function waitForBackend(port = 5001, host = "127.0.0.1", timeout = 30000) {
   return new Promise((resolve, reject) => {
     const startTime = Date.now();
 
@@ -435,7 +441,7 @@ app.whenReady().then(async () => {
   startBackend();
 
   try {
-    await waitForBackend(5000);
+    await waitForBackend(5001);
 
     createWindow();
   } catch (error) {

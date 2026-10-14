@@ -494,20 +494,7 @@ exports.createPurchase = async (req, res) => {
 
 
             if (barcode) {
-                const existingBarcode = await Barcode.findOne({
-                    code: barcode,
-                    superAdminId: hierarchy.superAdminId
-                });
-
-                if (
-                    existingBarcode &&
-                    String(existingBarcode.productId) !== String(product._id)
-                ) {
-                    return res.status(400).json({
-                        success: false,
-                        message: "Barcode already exists for another product"
-                    });
-                }
+               
 
                 await Barcode.findOneAndUpdate(
                     {
@@ -2916,22 +2903,6 @@ exports.updatePurchase = async (req, res) => {
                 }
             }
 
-            if (barcode) {
-                const existingBarcode = await Barcode.findOne({
-                    code: barcode,
-                    superAdminId: hierarchy.superAdminId
-                });
-
-                if (
-                    existingBarcode &&
-                    String(existingBarcode.productId) !== String(product._id)
-                ) {
-                    return res.status(400).json({
-                        success: false,
-                        message: "Barcode already exists for another product"
-                    });
-                }
-            }
 
             const gstRate = String(product.gstRate ?? "none")
                 .trim()
