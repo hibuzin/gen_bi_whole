@@ -106,75 +106,75 @@ ipcMain.handle("print-receipt", async (event) => {
     // 4. FIND RP3160
     // -------------------------------------------------
 
-console.log(
-  "[PRINT] Step 4: Searching preferred printers:",
-  THERMAL_PRINTER_NAMES
-);
-
-let printer = null;
-
-// Priority:
-// 1. RP3160 GOLD(U) 1
-// 2. POS-58(copy of 5)
-for (const preferredName of THERMAL_PRINTER_NAMES) {
-
-  console.log(
-    "[PRINT] Looking for:",
-    preferredName
-  );
-
-  printer = printers.find(
-    (p) =>
-      p.name === preferredName ||
-      p.displayName === preferredName
-  );
-
-  if (printer) {
-
     console.log(
-      "[PRINT] Found preferred printer:",
-      preferredName
+      "[PRINT] Step 4: Searching preferred printers:",
+      THERMAL_PRINTER_NAMES
     );
 
-    break;
-  }
+    let printer = null;
 
-  console.warn(
-    "[PRINT] Printer not available:",
-    preferredName
-  );
-}
+    // Priority:
+    // 1. RP3160 GOLD(U) 1
+    // 2. POS-58(copy of 5)
+    for (const preferredName of THERMAL_PRINTER_NAMES) {
 
-if (!printer) {
+      console.log(
+        "[PRINT] Looking for:",
+        preferredName
+      );
 
-  console.error(
-    "[PRINT] ❌ NONE OF THE PREFERRED PRINTERS FOUND"
-  );
+      printer = printers.find(
+        (p) =>
+          p.name === preferredName ||
+          p.displayName === preferredName
+      );
 
-  console.error(
-    "[PRINT] Expected one of:",
-    THERMAL_PRINTER_NAMES
-  );
+      if (printer) {
 
-  console.error(
-    "[PRINT] Available printer names:",
-    printers.map((p) => p.name)
-  );
+        console.log(
+          "[PRINT] Found preferred printer:",
+          preferredName
+        );
 
-  throw new Error(
-    `Thermal printer not found. Tried: ${THERMAL_PRINTER_NAMES.join(", ")}`
-  );
-}
+        break;
+      }
 
-console.log("[PRINT] Step 4 SUCCESS");
+      console.warn(
+        "[PRINT] Printer not available:",
+        preferredName
+      );
+    }
 
-console.log("[PRINT] Selected printer:");
-console.log("[PRINT] name:", printer.name);
-console.log(
-  "[PRINT] displayName:",
-  printer.displayName
-);
-console.log("[PRINT] status:", printer.status);
+    if (!printer) {
+
+      console.error(
+        "[PRINT] ❌ NONE OF THE PREFERRED PRINTERS FOUND"
+      );
+
+      console.error(
+        "[PRINT] Expected one of:",
+        THERMAL_PRINTER_NAMES
+      );
+
+      console.error(
+        "[PRINT] Available printer names:",
+        printers.map((p) => p.name)
+      );
+
+      throw new Error(
+        `Thermal printer not found. Tried: ${THERMAL_PRINTER_NAMES.join(", ")}`
+      );
+    }
+
+    console.log("[PRINT] Step 4 SUCCESS");
+
+    console.log("[PRINT] Selected printer:");
+    console.log("[PRINT] name:", printer.name);
+    console.log(
+      "[PRINT] displayName:",
+      printer.displayName
+    );
+    console.log("[PRINT] status:", printer.status);
 
 
     // -------------------------------------------------
@@ -299,21 +299,12 @@ console.log("[PRINT] status:", printer.status);
   }
 });
 
-
-
-
-
-
-
-
 function startBackend() {
- const backendPath = app.isPackaged
-  ? path.join(process.resourcesPath, "backo")
-  : path.join(__dirname, "../backo");
+  const backendPath = app.isPackaged
+    ? path.join(process.resourcesPath, "backo")
+    : path.join(__dirname, "../backo");
 
-  const nodePath = app.isPackaged
-    ? path.join(process.resourcesPath, "node-runtime", "node.exe")
-    : "node";
+  const nodePath = "node";
 
   console.log("====================================");
   console.log("Electron Started");
@@ -396,8 +387,8 @@ function createWindow() {
     height: 900,
     autoHideMenuBar: true,
 
-icon: path.join(__dirname, "../build/icon.ico"),
-    
+    icon: path.join(__dirname, "../build/icon.ico"),
+
     webPreferences: {
       preload: path.join(__dirname, "preload.cjs"),
       contextIsolation: true,
@@ -407,12 +398,12 @@ icon: path.join(__dirname, "../build/icon.ico"),
 
   if (app.isPackaged) {
     const indexPath = app.isPackaged
-  ? path.join(app.getAppPath(), "dist", "index.html")
-  : path.join(__dirname, "../dist/index.html");
+      ? path.join(app.getAppPath(), "dist", "index.html")
+      : path.join(__dirname, "../dist/index.html");
 
-console.log("Loading:", indexPath);
+    console.log("Loading:", indexPath);
 
-mainWindow.loadFile(indexPath);
+    mainWindow.loadFile(indexPath);
   } else {
     console.log("Loading: http://localhost:5173");
 
