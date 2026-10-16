@@ -47,42 +47,41 @@
     "vite": "^8.0.10"
   },
   "build": {
-    "appId": "com.hibuz.billing2",
-    "productName": "HibuzBilling 2",
-    "win": {
-      "target": "nsis"
+  "appId": "com.hibuz.billing2",
+  "productName": "HibuzBilling 2",
+  "win": {
+    "target": "nsis"
+  },
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "dist/**/*",
+    "electron/**/*",
+    "package.json"
+  ],
+  "extraResources": [
+    {
+      "from": "backo",
+      "to": "backo",
+      "filter": [
+        "**/*",
+        "!node_modules/.cache/**"
+      ]
     },
-    "directories": {
-      "output": "release"
+    {
+      "from": "node-runtime",
+      "to": "node-runtime"
     },
-    "files": [
-      "dist/**/*",
-      "electron/**/*",
-      "backo/**/*",
-      "package.json"
-    ],
-    "extraResources": [
-      {
-        "from": "backo",
-        "to": "backo"
-      },
-      {
-        "from": "backo/node_modules",
-        "to": "backo/node_modules"
-      },
-      {
-        "from": "node-runtime",
-        "to": "node-runtime"
-      },
-      {
-        "from": "installer/mongodb.msi",
-        "to": "installer/mongodb.msi"
-      }
-    ],
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "include": "build/installer.nsh"
+    {
+      "from": "installer/mongodb.msi",
+      "to": "installer/mongodb.msi"
     }
+  ],
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "include": "build/installer.nsh"
   }
+}
 }

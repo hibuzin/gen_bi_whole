@@ -199,7 +199,7 @@ ipcMain.handle("print-receipt", async (event) => {
             reject(
               new Error(
                 failureReason ||
-                  "Electron webContents.print failed"
+                "Electron webContents.print failed"
               )
             );
             return;
@@ -241,10 +241,10 @@ function startBackend() {
 
   const nodePath = app.isPackaged
     ? path.join(
-        process.resourcesPath,
-        "node-runtime",
-        "node.exe"
-      )
+      process.resourcesPath,
+      "node-runtime",
+      "node.exe"
+    )
     : "node";
 
   const serverPath = path.join(backendPath, "server.js");
@@ -317,8 +317,7 @@ function waitForBackend(
         if (Date.now() - startTime >= timeout) {
           reject(
             new Error(
-              `Backend did not start on ${host}:${port} within ${
-                timeout / 1000
+              `Backend did not start on ${host}:${port} within ${timeout / 1000
               } seconds. ${error?.message || ""}`
             )
           );
