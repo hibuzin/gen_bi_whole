@@ -299,15 +299,18 @@ ipcMain.handle("print-receipt", async (event) => {
   }
 });
 
+
 function startBackend() {
   const backendPath = app.isPackaged
     ? path.join(process.resourcesPath, "backo")
     : path.join(__dirname, "../backo");
 
-  const nodePath = "node";
+  const nodePath = app.isPackaged
+    ? path.join(process.resourcesPath, "node-runtime", "node.exe")
+    : "node";
 
   console.log("====================================");
-  console.log("Electron Started");
+  console.log("Electron Started - Billing 2");
   console.log("Packaged:", app.isPackaged);
   console.log("Backend:", backendPath);
   console.log("Node:", nodePath);
@@ -319,17 +322,100 @@ function startBackend() {
   });
 
   backendProcess.stdout.on("data", (data) => {
-    console.log("[Backend]", data.toString());
+    console.log("[Billing 2 Backend]", data.toString());
   });
 
   backendProcess.stderr.on("data", (data) => {
-    console.error("[Backend Error]", data.toString());
+    console.error("[Billing 2 Backend Error]", data.toString());
   });
 
   backendProcess.on("close", (code) => {
-    console.log("Backend exited:", code);
+    console.log("Billing 2 backend exited:", code);
   });
 }
+
+function waitForBackend(
+  port = 5001,
+  host = "127.0.0.1",
+  timeout = 30000
+) {
+  return new Promise((resolve, reject) => {
+    const startTime = Date.now();
+
+    function check() {
+      const socket = new net.Socket();
+
+      socket.setTimeout(1000);
+
+      socket.once("connect", () => {
+        socket.destroy();
+        console.log(
+          `[Electron] Billing 2 backend ready on ${host}:${port}`
+        );
+        resolve();
+      });
+
+      socket.once("error", () => {
+        socket.destroy();
+
+        if (Date.now() - startTime >= timeout) {
+          reject(
+            new Error(
+              `Backend did not start on ${host}:${port} within ${
+                timeout / 1000
+              } seconds`
+            )
+          );
+        } else {
+          setTimeout(check, 300);
+        }
+      });
+
+      socket.once("timeout", () => {
+        socket.destroy();
+
+        if (Date.now() - startTime >= timeout) {
+          reject(
+            new Error(
+              `Backend did not start on ${host}:${port} within ${
+                timeout / 1000
+              } seconds`
+            )
+          );
+        } else {
+          setTimeout(check, 300);
+        }
+      });
+
+      socket.connect(port, host);
+    }
+
+    check();
+  });
+}
+
+app.whenReady().then(async () => {
+  startBackend();
+
+  try {
+    await waitForBackend(5001);
+    createWindow();
+  } catch (error) {
+    console.error("[Electron] Backend startup failed:", error);
+    createWindow();
+  }
+});
+
+app.on("window-all-closed", () => {
+  // Keep Billing 2 running when its window is closed.
+});
+
+app.on("activate", () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow();
+  }
+});
+
 
 function waitForBackend(port = 5001, host = "127.0.0.1", timeout = 30000) {
   return new Promise((resolve, reject) => {
