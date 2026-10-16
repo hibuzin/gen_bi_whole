@@ -349,7 +349,7 @@ exports.createBill = async (req, res) => {
 
                     price: Number(price || 0),
 
-                   normalPrice: Number(normalPrice || 0),
+                    normalPrice: Number(normalPrice || 0),
                     gstRate,
                     gstAmount,
                     finalPrice
@@ -4050,7 +4050,7 @@ exports.getBillById = async (req, res) => {
             formattedBill.items.map(async (item) => {
                 const product = await mongoose.model("Product").findById(
                     item.productId
-                ).select("itemCode retailPrice wholesalePrice");
+                ).select("itemCode retailPrice wholesalePrice costPrice");
 
                 return {
                     productId: item.productId,
@@ -4071,6 +4071,8 @@ exports.getBillById = async (req, res) => {
                     totalkg: item.totalkg,
 
                     mrp: item.mrp,
+
+                    costPrice: Number(product?.costPrice || 0),
 
                     retailPrice: Number(product?.retailPrice || 0),
                     wholesalePrice: Number(product?.wholesalePrice || 0),
@@ -4583,7 +4585,7 @@ exports.editBill = async (req, res) => {
 
                 price: Number(price || 0),
 
-              normalPrice: Number(defaultPrice || 0),
+                normalPrice: Number(defaultPrice || 0),
 
                 totalAmount: grossAmount,
 
